@@ -23,7 +23,7 @@ const fetchResults = (word) => {
   };
   http.open("GET", url);
   http.send();
-  input.value = ''
+  input.value = "";
 };
 
 function renderResult(res) {
@@ -33,8 +33,8 @@ function renderResult(res) {
     .map((meaning) => {
       const { partOfSpeech, definitions } = meaning;
       const { definition, example } = definitions[0];
-      return `<div>
-  <h3 class='font-mono text-xl my-2 mx-1.5'>
+      return `<div class="w-[93%] mx-auto sm:w-[33rem] pb-2 border-b">
+  <h3 class='font-mono text-xl my-2 mx-1.5 '>
   ${word} <span class='lowercase'> (${partOfSpeech}) </span>
   </h3>
   <h4>
@@ -44,8 +44,8 @@ function renderResult(res) {
     })
     .join(" ");
 
-  resultContainer.innerHTML = `<div class="border-2 rounded-xl border-red-400 bg-red-50 flex flex-col w-[80%] sm:w-[33rem] mx-auto text-center flex-wrap justify-center gap-6 py-6 mt-4 p-2"> 
-  <h3 class="font-mono text-2xl inline-block mx-auto border-b-2 pb-1 border-red-500 capitalize word">${word} <i class="fa-solid fa-volume-high fa-sm"></i> </h3> ${result} </div> `;
+  resultContainer.innerHTML = `<div class="border-2 rounded-xl border-red-400 bg-red-50 flex flex-col w-[80%] sm:w-[36rem] mx-auto text-center flex-wrap justify-center gap-6 py-6 mt-4 p-2 break-words"> 
+  <h3 class="font-mono text-2xl inline-block mx-auto capitalize word break-all px-5"> <span class="underline underline-offset-8 ">${word}</span>  <i class="fa-solid fa-volume-high fa-sm mx-3"></i> </h3>  <div class="flex justify-center flex-col">${result}</div></div> `;
 
   document.querySelector(".word").addEventListener("click", () => {
     const synth = window.speechSynthesis;
