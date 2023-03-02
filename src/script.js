@@ -17,7 +17,7 @@ const fetchResults = (word) => {
     if (http.status == 404) {
       console.log(http);
       resultContainer.innerHTML = `<div class="h-52 flex justify-center items-center text-center">
-          <h2 class=" text-3xl font-mono"> No Definitions Found... </h2>
+          <h2 class="text-3xl font-mono"> No Definitions Found... </h2>
         </div>`;
     }
   };
@@ -44,8 +44,8 @@ function renderResult(res) {
     })
     .join(" ");
 
-  resultContainer.innerHTML = `<div class="border-2 rounded-xl border-red-400 bg-red-50 flex flex-col w-[80%] sm:w-[36rem] mx-auto text-center flex-wrap justify-center gap-6 py-6 mt-4 p-2 break-words"> 
-  <h3 class="font-mono text-2xl inline-block mx-auto capitalize word break-all px-5"> <span class="underline underline-offset-8 ">${word}</span>  <i class="fa-solid fa-volume-high fa-sm mx-3"></i> </h3>  <div class="flex justify-center flex-col">${result}</div></div> `;
+  resultContainer.innerHTML = `<div class="border-2 rounded-xl border-red-400 bg-red-50 flex flex-col w-[80%] sm:w-[36rem] mx-auto text-center flex-wrap justify-center gap-6 py-6 mt-4 px-2 break-words"> 
+  <h3 class="font-mono text-2xl inline-block mx-auto capitalize word break-all pl-5"> <span class="underline underline-offset-8">${word}</span>  <i class="fa-solid fa-volume-high fa-sm pl-2"></i> </h3>  <div class="flex justify-center flex-col">${result}</div></div> `;
 
   document.querySelector(".word").addEventListener("click", () => {
     const synth = window.speechSynthesis;
