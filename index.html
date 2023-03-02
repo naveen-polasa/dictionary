@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="https://kit.fontawesome.com/31f095b2b7.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-green-100 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+        <section class="flex flex-col justify-center items-center mt-4">
+            <img src="./src/assets/logo.png" alt="logo" class="w-24">
+            <h3 class="font-mono text-2xl my-3 sm:my-5">Dictionary</h3>
+            <form class="flex">
+                <input type="text" class="input w-[66vw] md:w-[35rem] h-11 border-2 rounded-lg mr-2 px-3 border-red-400"
+                    placeholder="Search word for meaning...">
+                <button type="submit"
+                    class="search border-2 p-2 rounded-lg font-mono bg-red-400 text-white hover:scale-105 duration-300">Search</button>
+            </form>
+        </section>
+        <section class="results py-8"></section>
+    </div>
+    <script src="./src/script.js"></script>
+</body>
+
+</html>
